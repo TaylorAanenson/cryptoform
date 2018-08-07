@@ -85,7 +85,7 @@ url: (queryURL)
         console.log(spam,eggs);
         $('#container2').append(object);
     });
-    if (currentHtml === 'tayloraanenson.github.io/cryptoform/'){
+    if (currentHtml === '/cryptoform/'||'/cryptoform/index.html'){
         $(document).ready(function(){
             var pageLoad = live[1].website_link;
             console.log(pageLoad);
@@ -162,7 +162,7 @@ url: (queryURL)
         console.log(spam,eggs);
         $('#container2').append(object);
     });
-    if (currentHtml === 'tayloraanenson.github.io/cryptoform/upcoming.html'){
+    if (currentHtml === '/cryptoform/upcoming.html'){
         $(document).ready(function(){
             var pageLoad = upcoming[0].website_link;
             console.log(pageLoad);
@@ -248,7 +248,7 @@ url: (queryURL)
         console.log(spam,eggs);
         $('#container2').append(object);
     });
-    if (currentHtml === 'tayloraanenson.github.io/cryptoform/finished.html'){
+    if (currentHtml === '/cryptoform/finished.html'){
         $(document).ready(function(){
             var pageLoad = finished[0].website_link;
             console.log(pageLoad);
