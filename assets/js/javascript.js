@@ -81,7 +81,11 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
-        object.attr('data',eggs);
+        console.log(eggs.slice(0,5));
+        if(eggs.slice(0,5) === 'http:'){
+            eggs.replace(/http:/g,'https:');
+        }
+        object.attr('data',eggs);    
         // console.log(spam,eggs);
         $('#container2').append(object);
         $(document).ready(function() {
@@ -188,8 +192,11 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
+        if(eggs.slice(0,5) === 'http:'){
+            eggs.replace(/http:/g,'https:');
+        }
         object.attr('data',eggs);
-        // console.log(spam,eggs);
+        console.log(spam,eggs);
         $('#container2').append(object);
         $(document).ready(function() {
             // Animate loader off screen
