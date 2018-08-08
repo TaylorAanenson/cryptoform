@@ -7,16 +7,21 @@ console.log(currentHtml);
 
 // }
 
+$(document).ready(function() {
+    // Animate loader off screen
+    $("#load-gif").fadeOut("slow");;
+});
+
+// Live ico's
+if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/index.html'){
 $.ajax({
-url: (queryURL)
-}).then (function(response){
-    // var data = [];
-    // data.push(response);
-    var parsedData = JSON.parse(response);
-    var live = parsedData.ico.live;
-    var upcoming = parsedData.ico.upcoming;
-    var finished = parsedData.ico.finished;
-    // Live ico's
+url: (queryURL),
+error: function(XMLHttpRequest, textStatus, errorThrown){
+    console.log('status:' + XMLHttpRequest.status + ', status text: ' + XMLHttpRequest.statusText);
+    console.log(textStatus,errorThrown);
+},success: function(response){
+    var live = JSON.parse(response).ico.live;
+    // if (currentHtml === '/cryptoform/'||'/cryptoform/index.html'){
     for (var i=0;i<live.length;i++){
         var card = $('<div>');
         card.attr('class','card');
@@ -69,31 +74,58 @@ url: (queryURL)
         cardBody.append(name,des,time,companySite,companyInternal,companyExternal,icoWatchList,icoInternal,icoExternal);
         card.append(img,cardBody);
         $('#container1-live').append(card);
-        console.log(live[i]);
+        // console.log(live[i]);
     }
     $(document).on('click','#company-internal',function(){
+        $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
         object.attr('data',eggs);
-        console.log(spam,eggs);
+        // console.log(spam,eggs);
         $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
+        });
+        // console.log(object);
     });
     $(document).on('click','#ico-internal',function(){
+        $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
         object.attr('data',eggs);
-        console.log(spam,eggs);
+        // console.log(spam,eggs);
         $('#container2').append(object);
-    });
-    if (currentHtml === '/cryptoform/'||'/cryptoform/index.html'){
-        $(document).ready(function(){
-            var pageLoad = live[1].website_link;
-            console.log(pageLoad);
-            object.attr('data',pageLoad);
-            $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
         });
-    }
-    // Upcoming ico's
+    });
+    $(document).ready(function(){
+        $('#load-gif').show();
+        var pageLoad = live[0].website_link;
+        // console.log(pageLoad);
+        object.attr('data',pageLoad);
+        $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
+        });
+    });
+}
+});
+}
+
+// Upcoming ico's
+if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/upcoming.html'){
+$.ajax({
+url: (queryURL),
+error: function(XMLHttpRequest, textStatus, errorThrown){
+    console.log('status:' + XMLHttpRequest.status + ', status text: ' + XMLHttpRequest.statusText);
+    console.log(textStatus,errorThrown);
+},success: function(response){
+    var upcoming = JSON.parse(response).ico.upcoming;
+    // if (currentHtml === '/cryptoform/upcoming.html'){
     for (var i=0;i<upcoming.length;i++){
         var card = $('<div>');
         card.attr('class','card');
@@ -149,29 +181,56 @@ url: (queryURL)
         console.log(upcoming[i]);
     }
     $(document).on('click','#company-internal',function(){
+        $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
         object.attr('data',eggs);
-        console.log(spam,eggs);
+        // console.log(spam,eggs);
         $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
+        });
     });
     $(document).on('click','#ico-internal',function(){
+        $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
         object.attr('data',eggs);
-        console.log(spam,eggs);
+        // console.log(spam,eggs);
         $('#container2').append(object);
-    });
-    if (currentHtml === '/cryptoform/upcoming.html'){
-        $(document).ready(function(){
-            var pageLoad = upcoming[0].website_link;
-            console.log(pageLoad);
-            object.attr('data',pageLoad);
-            $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
         });
-    }
-    // Finished ico's
-    for (var i=0;i<finished.length;i++){
+    });
+    $(document).ready(function(){
+        $('#load-gif').show();
+        var pageLoad = upcoming[0].website_link;
+        console.log(pageLoad);
+        object.attr('data',pageLoad);
+        $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
+        });
+    });
+}
+});
+}
+
+// Finished ico's
+if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/finished.html'){
+$.ajax({
+url: (queryURL),
+error: function(XMLHttpRequest, textStatus, errorThrown){
+    console.log('status:' + XMLHttpRequest.status + ', status text: ' + XMLHttpRequest.statusText);
+    console.log(textStatus,errorThrown);
+},success: function(response){
+    var finished = JSON.parse(response).ico.finished;
+    finished.reverse();
+    // if (currentHtml === '/cryptoform/finished.html'){
+    for (var i=0;i<100;i++){
         var card = $('<div>');
         card.attr('class','card');
         var img = $('<img>');
@@ -232,29 +291,44 @@ url: (queryURL)
         cardBody.append(name,des,time,roi,symbol,price,companySite,companyInternal,companyExternal,icoWatchList,icoInternal,icoExternal);
         card.append(img,cardBody);
         $('#container1-finished').append(card);
-        console.log(finished[i]);
+        // console.log(finished[i]);
     }
     $(document).on('click','#company-internal',function(){
+        $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
         object.attr('data',eggs);
-        console.log(spam,eggs);
+        // console.log(spam,eggs);
         $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
+        });
+        // console.log(object);
     });
     $(document).on('click','#ico-internal',function(){
+        $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
         object.attr('data',eggs);
-        console.log(spam,eggs);
+        // console.log(spam,eggs);
         $('#container2').append(object);
-    });
-    if (currentHtml === '/cryptoform/finished.html'){
-        $(document).ready(function(){
-            var pageLoad = finished[0].website_link;
-            console.log(pageLoad);
-            object.attr('data',pageLoad);
-            $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
         });
-    }
-    // console.log(finished,live,upcoming);
+    });
+    $(document).ready(function(){
+        $('#load-gif').show();
+        var pageLoad = finished[0].website_link;
+        // console.log(pageLoad);
+        object.attr('data',pageLoad);
+        $('#container2').append(object);
+        $(document).ready(function() {
+            // Animate loader off screen
+            $("#load-gif").fadeOut("slow");;
+        });
+    });
+}
 });
+}
