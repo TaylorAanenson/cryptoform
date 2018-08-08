@@ -13,7 +13,8 @@ $(document).ready(function() {
 });
 
 // Live ico's
-if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/index.html'){
+if (currentHtml === '/cryptoform/'||'/cryptoform/index.html'){
+// if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/index.html'){
 $.ajax({
 url: (queryURL),
 error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -21,7 +22,6 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
     console.log(textStatus,errorThrown);
 },success: function(response){
     var live = JSON.parse(response).ico.live;
-    // if (currentHtml === '/cryptoform/'||'/cryptoform/index.html'){
     for (var i=0;i<live.length;i++){
         var card = $('<div>');
         card.attr('class','card');
@@ -117,7 +117,8 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 }
 
 // Upcoming ico's
-if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/upcoming.html'){
+if (currentHtml === '/cryptoform/upcoming.html'){
+// if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/upcoming.html'){
 $.ajax({
 url: (queryURL),
 error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -125,7 +126,6 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
     console.log(textStatus,errorThrown);
 },success: function(response){
     var upcoming = JSON.parse(response).ico.upcoming;
-    // if (currentHtml === '/cryptoform/upcoming.html'){
     for (var i=0;i<upcoming.length;i++){
         var card = $('<div>');
         card.attr('class','card');
@@ -220,7 +220,8 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 }
 
 // Finished ico's
-if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/finished.html'){
+if (currentHtml === '/cryptoform/finished.html'){
+// if (currentHtml === '/Users/tayloraanenson/Documents/Crypto/cryptoform/finished.html'){
 $.ajax({
 url: (queryURL),
 error: function(XMLHttpRequest, textStatus, errorThrown){
@@ -229,7 +230,6 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
 },success: function(response){
     var finished = JSON.parse(response).ico.finished;
     finished.reverse();
-    // if (currentHtml === '/cryptoform/finished.html'){
     for (var i=0;i<100;i++){
         var card = $('<div>');
         card.attr('class','card');
