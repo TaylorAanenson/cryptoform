@@ -77,6 +77,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         // console.log(live[i]);
     }
     $(document).on('click','#company-internal',function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
@@ -90,6 +91,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         // console.log(object);
     });
     $(document).on('click','#ico-internal',function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
@@ -102,6 +104,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         });
     });
     $(document).ready(function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var pageLoad = live[0].website_link;
         // console.log(pageLoad);
@@ -181,6 +184,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         console.log(upcoming[i]);
     }
     $(document).on('click','#company-internal',function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
@@ -193,6 +197,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         });
     });
     $(document).on('click','#ico-internal',function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
@@ -205,6 +210,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         });
     });
     $(document).ready(function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var pageLoad = upcoming[0].website_link;
         console.log(pageLoad);
@@ -294,6 +300,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         // console.log(finished[i]);
     }
     $(document).on('click','#company-internal',function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
@@ -307,6 +314,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         // console.log(object);
     });
     $(document).on('click','#ico-internal',function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var spam = $(this).button();
         var eggs = spam[0].attributes.href.value;
@@ -319,6 +327,7 @@ error: function(XMLHttpRequest, textStatus, errorThrown){
         });
     });
     $(document).ready(function(){
+        $('#container2').empty();
         $('#load-gif').show();
         var pageLoad = finished[0].website_link;
         // console.log(pageLoad);
