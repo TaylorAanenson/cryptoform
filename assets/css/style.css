@@ -1,5 +1,6 @@
 html,body {
-    height: 88%;
+    height: 89%;
+    min-height: 89%
 }
 #load-gif {
 	position: fixed;
